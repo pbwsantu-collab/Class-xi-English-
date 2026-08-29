@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>🐍 Class XI · Astrologer &amp; Nepal</title>
-  <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkNsYXNzIFhJIE1hZ2ljYWwgTWVudSIsCiAgInNob3J0X25hbWUiOiAiQ2xhc3MgWEkiLAogICJkZXNjcmlwdGlvbiI6ICJNZW51IHdpdGggc25ha2UgJiBOZXBhbCBmbG9vZCBtZXNzYWdlIiwKICAic3RhcnRfdXJsIjogIi4iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiNmZmZmZmYiLAogICJ0aGVtZV9jb2xvciI6ICIjZmY3YjUwIgp9">
+  <title>🐍 Class XI · Astrologer &amp; Cobra</title>
+  <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkNsYXNzIFhJIE1hZ2ljYWwgTWVudSIsCiAgInNob3J0X25hbWUiOiAiQ2xhc3MgWEkiLAogICJkZXNjcmlwdGlvbiI6ICJNZW51IHdpdGggY29icmEgJiBOZXBhbCBmbG9vZCBtZXNzYWdlIiwKICAic3RhcnRfdXJsIjogIi4iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiNmZmZmZmYiLAogICJ0aGVtZV9jb2xvciI6ICIjZmY3YjUwIgp9">
   <style>
     * {
       margin: 0;
@@ -15,7 +15,7 @@
 
     body {
       min-height: 100vh;
-      background: linear-gradient(145deg, #0d1a2b 0%, #1b2f44 40%, #1f3a4b 100%);
+      background: linear-gradient(145deg, #0a151f 0%, #172a3a 40%, #1f3a4b 100%);
       background-attachment: fixed;
       display: flex;
       justify-content: center;
@@ -25,7 +25,7 @@
       overflow-x: hidden;
     }
 
-    /* ---------- SNAKE + MOUSE + NEPAL FLOOD ---------- */
+    /* ---------- COBRA + NEPAL FLOOD ---------- */
     .scene-container {
       position: fixed;
       top: 0;
@@ -37,67 +37,54 @@
       overflow: hidden;
     }
 
-    /* snake & mouse base */
-    .snake {
+    .cobra {
       position: absolute;
-      font-size: 3.8rem;
-      filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 30px #3a1f0c);
+      font-size: 4.5rem;
+      filter: drop-shadow(0 0 20px #1a0a00) drop-shadow(0 0 50px #4a2a1a);
       will-change: transform, left, top;
-      transition: filter 0.2s;
       line-height: 1;
       pointer-events: none;
       z-index: 12;
-      text-shadow: 0 0 20px #2f1a0a;
+      text-shadow: 0 0 30px #2f1a0a, 0 0 60px #1f0f00;
+      transition: filter 0.15s;
     }
 
-    .mouse {
-      position: absolute;
-      font-size: 2.8rem;
-      filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
-      will-change: transform, left, top;
-      line-height: 1;
-      pointer-events: none;
-      z-index: 10;
-      transition: filter 0.2s;
-      text-shadow: 0 0 20px #ffffff80;
-    }
-
-    /* hissing effect (snake tongue) */
+    /* hissing tongue effect */
     .hiss-tongue {
       position: absolute;
-      font-size: 2rem;
+      font-size: 2.2rem;
       opacity: 0;
-      transition: opacity 0.08s;
       pointer-events: none;
       z-index: 15;
-      color: #ff6666;
-      text-shadow: 0 0 20px red;
-      filter: drop-shadow(0 0 12px #ff2222);
+      color: #ff6644;
+      text-shadow: 0 0 30px #ff2200, 0 0 60px #ff4400;
+      filter: drop-shadow(0 0 20px #ff3333);
+      transition: opacity 0.05s;
     }
 
-    /* Nepal flood message — appears as overlay animation */
+    /* Nepal flood message */
     .nepal-flood {
       position: absolute;
-      bottom: 8%;
+      bottom: 6%;
       left: 50%;
       transform: translateX(-50%);
       background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      padding: 14px 32px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 14px 34px;
       border-radius: 80px;
       border: 2px solid #ffb347;
       color: #fff5e0;
       font-weight: 700;
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       letter-spacing: 2px;
       text-align: center;
-      box-shadow: 0 0 50px #ff8800aa, 0 0 100px #ff440088;
-      animation: pulseNepal 2.2s ease-in-out infinite alternate;
+      box-shadow: 0 0 60px #ff8800aa, 0 0 120px #ff440088;
+      animation: pulseNepal 2.4s ease-in-out infinite alternate;
       white-space: nowrap;
       z-index: 20;
       pointer-events: none;
-      text-shadow: 0 0 30px #ffaa33;
+      text-shadow: 0 0 40px #ffaa33;
     }
     .nepal-flood small {
       font-weight: 300;
@@ -108,21 +95,21 @@
     }
 
     @keyframes pulseNepal {
-      0% { transform: translateX(-50%) scale(0.95); box-shadow: 0 0 30px #ff880066; }
-      100% { transform: translateX(-50%) scale(1.05); box-shadow: 0 0 80px #ff8800cc, 0 0 150px #ff4400aa; }
+      0% { transform: translateX(-50%) scale(0.95); box-shadow: 0 0 40px #ff880066; }
+      100% { transform: translateX(-50%) scale(1.05); box-shadow: 0 0 90px #ff8800cc, 0 0 180px #ff4400aa; }
     }
 
     /* ---------- MAIN CARD ---------- */
     .menu-card {
       max-width: 820px;
       width: 100%;
-      background: rgba(10, 25, 40, 0.6);
-      backdrop-filter: blur(18px) saturate(180%);
-      -webkit-backdrop-filter: blur(18px) saturate(180%);
+      background: rgba(10, 25, 40, 0.65);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
       border-radius: 60px 60px 40px 40px;
       padding: 2rem 2rem 2.6rem;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), 0 0 0 2px rgba(255, 215, 150, 0.1) inset;
-      border: 1px solid rgba(255, 200, 150, 0.15);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), 0 0 0 2px rgba(255, 215, 150, 0.08) inset;
+      border: 1px solid rgba(255, 200, 150, 0.12);
       position: relative;
       z-index: 30;
     }
@@ -137,7 +124,7 @@
       text-align: center;
       letter-spacing: 1px;
       margin-bottom: 0.1rem;
-      text-shadow: 0 0 40px rgba(255, 180, 50, 0.3);
+      text-shadow: 0 0 40px rgba(255, 180, 50, 0.25);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -152,7 +139,7 @@
       letter-spacing: 2px;
       font-size: 1.05rem;
       margin-bottom: 2rem;
-      border-bottom: 1px dashed rgba(255, 200, 150, 0.2);
+      border-bottom: 1px dashed rgba(255, 200, 150, 0.15);
       padding-bottom: 0.8rem;
     }
 
@@ -173,7 +160,7 @@
       color: #f0ecf0;
       font-weight: 600;
       font-size: 1rem;
-      border: 1px solid rgba(255, 200, 150, 0.12);
+      border: 1px solid rgba(255, 200, 150, 0.1);
       box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.5);
       transition: all 0.2s ease;
       cursor: pointer;
@@ -190,7 +177,7 @@
       transform: scale(1.03) translateY(-5px);
       background: rgba(255, 255, 255, 0.15);
       border-color: #f7b773;
-      box-shadow: 0 20px 35px -6px #000000cc, 0 0 0 2px rgba(255, 200, 100, 0.3);
+      box-shadow: 0 20px 35px -6px #000000cc, 0 0 0 2px rgba(255, 200, 100, 0.25);
     }
 
     .menu-item .icon { font-size: 2.3rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5)); margin-bottom: 2px; }
@@ -201,7 +188,7 @@
       font-size: 0.8rem;
       font-weight: 500;
       backdrop-filter: blur(4px);
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.05);
       color: #f5efe0;
     }
     .menu-item .badge {
@@ -215,7 +202,7 @@
       opacity: 0.9;
     }
 
-    /* special colors */
+    /* item colors */
     .menu-item:nth-child(1) { background: rgba(255, 160, 100, 0.15); }
     .menu-item:nth-child(2) { background: rgba(100, 200, 255, 0.15); }
     .menu-item:nth-child(3) { background: rgba(255, 215, 100, 0.15); }
@@ -225,7 +212,6 @@
     .menu-item:nth-child(7) { background: rgba(255, 100, 130, 0.15); }
     .menu-item:nth-child(8) { background: rgba(200, 180, 255, 0.15); }
     .menu-item:nth-child(9) { background: rgba(255, 220, 120, 0.15); }
-    .menu-item:nth-child(10) { background: rgba(255, 120, 200, 0.15); }
 
     .footer-note {
       margin-top: 2rem;
@@ -242,20 +228,18 @@
       h1 { font-size: 2.2rem; }
       .menu-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
       .nepal-flood { font-size: 1.2rem; padding: 10px 18px; white-space: normal; }
-      .snake { font-size: 3rem; }
-      .mouse { font-size: 2.2rem; }
+      .cobra { font-size: 3.5rem; }
+      .hiss-tongue { font-size: 1.8rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- SCENE: snake chasing mouse + hissing + Nepal flood -->
+  <!-- SCENE: Black Cobra reeling + hissing + Nepal flood -->
   <div class="scene-container" aria-hidden="true">
-    <!-- snake -->
-    <div class="snake" id="snake" role="img" aria-label="black snake">🐍</div>
-    <!-- mouse -->
-    <div class="mouse" id="mouse" role="img" aria-label="white mouse">🐭</div>
-    <!-- hissing tongue (appears near snake) -->
+    <!-- Cobra (black snake) -->
+    <div class="cobra" id="cobra" role="img" aria-label="black cobra">🐍</div>
+    <!-- Hissing tongue -->
     <div class="hiss-tongue" id="hissTongue">👅🔥</div>
 
     <!-- Nepal flood pray message -->
@@ -273,20 +257,17 @@
       <span style="background: linear-gradient(135deg, #f9d9a0, #f5b07c); -webkit-background-clip: text; background-clip: text; color: transparent;">Astrologer</span>
     </h1>
     <div class="subhead">
-      <span>📖 literature · drama · plus "An Astrologer's Day"</span>
+      <span>📖 literature · drama · "An Astrologer's Day"</span>
     </div>
 
     <div class="menu-grid">
-      <!-- added "An Astrologer's Day" as first item -->
-      <a class="menu-item" href="#" target="_blank" rel="noopener noreferrer" onclick="alert('🌟 An Astrologer\'s Day — coming soon!')">
+      <!-- REPLACED Scaling Meme with An Astrologer's Day -->
+      <a class="menu-item" href="#" target="_blank" rel="noopener noreferrer" onclick="alert('🔮 An Astrologer\'s Day — classic short story by R.K. Narayan')">
         <span class="icon">🔮</span>
         <span class="label">An Astrologer's Day</span>
-        <span class="badge">⭐ new</span>
+        <span class="badge">⭐ featured</span>
       </a>
 
-      <a class="menu-item" href="https://pbwsantu-collab.github.io/scaling-meme/" target="_blank" rel="noopener noreferrer">
-        <span class="icon">🧬</span><span class="label">Scaling Meme</span><span class="badge">♾️</span>
-      </a>
       <a class="menu-item" href="https://pbwsantu-collab.github.io/Amarnath-class-xi/" target="_blank" rel="noopener noreferrer">
         <span class="icon">🏔️</span><span class="label">Amarnath</span><span class="badge">⛰️</span>
       </a>
@@ -323,115 +304,97 @@
     </div>
 
     <div class="footer-note">
-      <span>🐍 snake &amp; mouse · pray for nepal 🇳🇵</span>
+      <span>🐍 black cobra · pray for nepal 🇳🇵</span>
     </div>
   </main>
 
-  <!-- SCRIPT: snake chasing mouse, hissing, and flood animation -->
+  <!-- SCRIPT: Cobra reeling + hissing animation -->
   <script>
     (function() {
-      const snake = document.getElementById('snake');
-      const mouse = document.getElementById('mouse');
+      const cobra = document.getElementById('cobra');
       const hiss = document.getElementById('hissTongue');
 
-      let mouseX = 20, mouseY = 30;
-      let snakeX = 70, snakeY = 70;
+      let angle = 0;
+      let x = 30, y = 30;
+      let direction = 1;
       let frame = 0;
 
-      // hissing state
+      // hissing control
       let hissActive = false;
       let hissTimer = 0;
 
-      function moveScene() {
+      function animateCobra() {
         frame++;
-        // mouse moves randomly but with smooth direction (like running)
-        mouseX += (Math.random() - 0.5) * 5.5;
-        mouseY += (Math.random() - 0.5) * 5.5;
-        // keep within viewport bounds
-        const maxW = window.innerWidth - 80;
-        const maxH = window.innerHeight - 80;
-        mouseX = Math.min(Math.max(mouseX, 10), maxW);
-        mouseY = Math.min(Math.max(mouseY, 10), maxH);
+        // Reeling movement: figure-eight / swaying path
+        angle += 0.035 * direction;
+        const radius = 120 + 40 * Math.sin(angle * 0.5);
+        const centerX = window.innerWidth * 0.5;
+        const centerY = window.innerHeight * 0.4;
 
-        // snake chases mouse with slight offset + random jitter (attack feel)
-        const dx = mouseX - snakeX;
-        const dy = mouseY - snakeY;
-        const dist = Math.hypot(dx, dy);
+        // smooth swaying with some randomness
+        const offsetX = Math.sin(angle) * radius + Math.sin(angle * 0.7) * 30;
+        const offsetY = Math.cos(angle * 1.2) * radius * 0.5 + Math.cos(angle * 0.9) * 25;
 
-        // snake moves toward mouse (with some inertia)
-        const speed = Math.min(6.5, dist / 12 + 1.2);
-        if (dist > 5) {
-          snakeX += (dx / dist) * speed * 0.7 + (Math.random() - 0.5) * 0.8;
-          snakeY += (dy / dist) * speed * 0.7 + (Math.random() - 0.5) * 0.8;
-        } else {
-          // if very close, snake "strikes" with extra jitter
-          snakeX += (Math.random() - 0.5) * 4;
-          snakeY += (Math.random() - 0.5) * 4;
-        }
+        let newX = centerX + offsetX;
+        let newY = centerY + offsetY + 20 * Math.sin(angle * 0.6);
 
-        // keep snake in bounds
-        snakeX = Math.min(Math.max(snakeX, 10), maxW);
-        snakeY = Math.min(Math.max(snakeY, 10), maxH);
+        // keep within viewport
+        const maxW = window.innerWidth - 100;
+        const maxH = window.innerHeight - 100;
+        newX = Math.min(Math.max(newX, 30), maxW);
+        newY = Math.min(Math.max(newY, 30), maxH);
 
-        // apply positions
-        snake.style.left = snakeX + 'px';
-        snake.style.top = snakeY + 'px';
-        mouse.style.left = mouseX + 'px';
-        mouse.style.top = mouseY + 'px';
+        cobra.style.left = newX + 'px';
+        cobra.style.top = newY + 'px';
 
-        // hissing effect: when snake close to mouse (dist < 130)
-        const hissDist = Math.hypot(snakeX - mouseX, snakeY - mouseY);
-        if (hissDist < 130 && frame % 3 === 0) {
+        // Cobra head rotates / reels (simulate striking posture)
+        const rotateAngle = Math.sin(angle) * 25 + 10 * Math.sin(angle * 0.5);
+        cobra.style.transform = `rotate(${rotateAngle}deg) scale(${1 + 0.08 * Math.sin(angle * 0.7)})`;
+
+        // Hissing effect: periodic hiss with tongue flash
+        if (frame % 25 < 8 || Math.sin(angle * 0.4) > 0.7) {
           hissActive = true;
-          hiss.style.opacity = 0.9 + Math.random() * 0.3;
-          hiss.style.left = (snakeX + 20 + (Math.random() - 0.5) * 40) + 'px';
-          hiss.style.top = (snakeY - 30 + (Math.random() - 0.5) * 30) + 'px';
-          hiss.style.transform = `rotate(${Math.random() * 60 - 30}deg) scale(${0.8 + Math.random() * 0.5})`;
-          // reset timer
-          hissTimer = 6;
+          hiss.style.opacity = 0.8 + Math.random() * 0.4;
+          hiss.style.left = (newX + 30 + (Math.random() - 0.5) * 40) + 'px';
+          hiss.style.top = (newY - 20 + (Math.random() - 0.5) * 30) + 'px';
+          hiss.style.transform = `rotate(${Math.random() * 50 - 25}deg) scale(${0.8 + Math.random() * 0.6})`;
+          hissTimer = 10;
         } else {
           if (hissTimer > 0) {
             hissTimer--;
-            hiss.style.opacity = 0.5 + Math.random() * 0.3;
+            hiss.style.opacity = 0.3 + Math.random() * 0.3;
           } else {
             hiss.style.opacity = 0;
             hissActive = false;
           }
         }
 
-        // make snake "angry" with occasional red glow when close
-        if (hissDist < 100) {
-          snake.style.filter = 'drop-shadow(0 0 30px #ff3300) drop-shadow(0 0 60px #ff2200)';
+        // Cobra glow effect: intense when hissing
+        if (hissActive || hissTimer > 3) {
+          cobra.style.filter = 'drop-shadow(0 0 30px #ff3300) drop-shadow(0 0 70px #ff2200) drop-shadow(0 0 120px #cc1100)';
         } else {
-          snake.style.filter = 'drop-shadow(0 0 12px rgba(0,0,0,0.8)) drop-shadow(0 0 30px #3a1f0c)';
+          cobra.style.filter = 'drop-shadow(0 0 20px #1a0a00) drop-shadow(0 0 50px #4a2a1a)';
         }
 
-        // mouse gets scared (white flash) when close
-        if (hissDist < 110) {
-          mouse.style.filter = 'drop-shadow(0 0 30px #ffffff) drop-shadow(0 0 60px #fff5cc)';
-        } else {
-          mouse.style.filter = 'drop-shadow(0 0 15px rgba(255,255,255,0.5))';
-        }
+        // Random direction change occasionally
+        if (frame % 300 === 0) direction *= -1;
 
-        requestAnimationFrame(moveScene);
+        requestAnimationFrame(animateCobra);
       }
 
-      // start animation
-      moveScene();
+      animateCobra();
 
-      // PWA service worker (minimal)
+      // PWA service worker
       if ('serviceWorker' in navigator) {
         const swCode = `
-          self.addEventListener('install', e => e.waitUntil(caches.open('classxi-v2').then(c => c.addAll(['/','index.html']))));
+          self.addEventListener('install', e => e.waitUntil(caches.open('classxi-v3').then(c => c.addAll(['/','index.html']))));
           self.addEventListener('fetch', e => e.respondWith(caches.match(e.request).then(r => r || fetch(e.request))));
         `;
         const blob = new Blob([swCode], { type: 'application/javascript' });
         const swUrl = URL.createObjectURL(blob);
         navigator.serviceWorker.register(swUrl, { scope: '/' }).catch(() => {});
       }
-
-      // extra: nepal flood message already in HTML with pulse animation
     })();
   </script>
 </body>
-        </html>
+  </html>
